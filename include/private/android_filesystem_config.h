@@ -69,6 +69,7 @@
 #define AID_INET          3003  /* can create AF_INET and AF_INET6 sockets */
 #define AID_NET_RAW       3004  /* can create raw INET sockets */
 #define AID_NET_ADMIN     3005  /* can configure interfaces and routing tables. */
+#define AID_QCOM_ONCRPC   3006  /* can read/write /dev/oncrpc files */
 
 #define AID_MISC          9998  /* access to misc storage */
 #define AID_NOBODY        9999
@@ -104,6 +105,7 @@ static const struct android_id_info android_ids[] = {
     { "diag",      AID_DIAG, },
     { "net_bt_admin", AID_NET_BT_ADMIN, },
     { "net_bt",    AID_NET_BT, },
+    { "qcom_oncrpc", AID_QCOM_ONCRPC, },
     { "sdcard_rw", AID_SDCARD_RW, },
     { "vpn",       AID_VPN, },
     { "keystore",  AID_KEYSTORE, },
@@ -174,6 +176,7 @@ static struct fs_path_config android_files[] = {
     { 00640, AID_SYSTEM,    AID_SYSTEM,    "system/etc/bluetooth/auto_pairing.conf" },
     { 00444, AID_RADIO,     AID_AUDIO,     "system/etc/AudioPara4.csv" },
     { 00555, AID_ROOT,      AID_ROOT,      "system/etc/ppp/*" },
+    { 00555, AID_ROOT,      AID_ROOT,      "system/etc/rc.*" },
     { 00644, AID_SYSTEM,    AID_SYSTEM,    "data/app/*" },
     { 00644, AID_SYSTEM,    AID_SYSTEM,    "data/app-private/*" },
     { 00644, AID_APP,       AID_APP,       "data/data/*" },
